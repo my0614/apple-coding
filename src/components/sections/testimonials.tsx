@@ -23,7 +23,7 @@ const TESTIMONIALS = [
 export function Testimonials() {
   return (
     <section className="bg-cool">
-      <div className="mx-auto max-w-6xl px-6 py-20 lg:py-24">
+      <div className="mx-auto max-w-6xl px-6 py-16 lg:py-24">
         <p className="text-sm font-medium text-brand">수강 후기</p>
         <h2 className="mt-3 max-w-xl font-display text-3xl font-semibold leading-tight text-balance text-ink lg:text-4xl">
           함께 배운 이들의 이야기

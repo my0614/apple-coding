@@ -16,7 +16,7 @@ const REASONS = [
 export function WhyUs() {
   return (
     <section className="bg-cool">
-      <div className="mx-auto max-w-6xl px-6 py-20 lg:py-24">
+      <div className="mx-auto max-w-6xl px-6 py-16 lg:py-24">
         <div className="grid items-center gap-10 lg:grid-cols-2">
           <div>
             <p className="text-sm font-medium text-brand">수업 진행과정</p>

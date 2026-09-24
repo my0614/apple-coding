@@ -113,6 +113,9 @@
     color: var(--color-foreground);
     font-family: var(--font-body);
     -webkit-font-smoothing: antialiased;
+    /* 한글이 단어 중간에서 줄바꿈되지 않도록 합니다. */
+    word-break: keep-all;
+    overflow-wrap: break-word;
   }
 
   html {

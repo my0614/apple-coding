@@ -19,12 +19,14 @@ export function Hero() {
             "radial-gradient(60% 60% at 78% 10%, rgba(120,170,255,0.35), transparent 60%), radial-gradient(50% 50% at 15% 90%, rgba(20,184,166,0.22), transparent 60%)",
         }}
       />
-      <div className="relative mx-auto grid max-w-6xl items-center gap-10 px-6 py-20 lg:grid-cols-12 lg:py-28">
+      <div className="relative mx-auto grid max-w-6xl items-center gap-10 px-6 pt-12 pb-16 lg:grid-cols-12 lg:py-28">
         <div className="lg:col-span-7">
-          <ul className="inline-flex flex-wrap items-center gap-x-3 gap-y-1 rounded-2xl bg-paper/70 px-4 py-2 text-xs font-medium text-brand ring-1 ring-ink/5 backdrop-blur-md sm:rounded-full">
-            {HIGHLIGHTS.map((item, index) => (
-              <li key={item} className="flex items-center gap-3">
-                {index > 0 && <span aria-hidden className="h-3 w-px bg-brand/25" />}
+          <ul className="flex flex-wrap gap-2">
+            {HIGHLIGHTS.map((item) => (
+              <li
+                key={item}
+                className="rounded-full bg-paper/70 px-3 py-1.5 text-xs font-medium text-brand ring-1 ring-ink/5 backdrop-blur-md"
+              >
                 {item}
               </li>
             ))}
@@ -72,7 +74,7 @@ export function Hero() {
               priority
               placeholder="blur"
               sizes="(min-width: 1024px) 40vw, 100vw"
-              className="aspect-[4/5] w-full rounded-[14px] object-cover"
+              className="aspect-[4/3] w-full lg:aspect-[4/5] rounded-[14px] object-cover"
             />
           </div>
         </div>

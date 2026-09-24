@@ -25,7 +25,7 @@ const COURSES = [
 export function Courses() {
   return (
     <section className="bg-card">
-      <div className="mx-auto max-w-6xl px-6 py-20 lg:py-24">
+      <div className="mx-auto max-w-6xl px-6 py-16 lg:py-24">
         <div className="max-w-xl">
           <p className="text-sm font-medium text-brand">커리큘럼</p>
           <h2 className="mt-3 font-display text-3xl font-semibold leading-tight text-balance text-ink lg:text-4xl">

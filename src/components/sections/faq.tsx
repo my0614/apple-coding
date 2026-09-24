@@ -34,7 +34,7 @@ const FAQS = [
 export function Faq() {
   return (
     <section className="bg-card">
-      <div className="mx-auto grid max-w-6xl gap-10 px-6 py-20 lg:grid-cols-12 lg:py-24">
+      <div className="mx-auto grid max-w-6xl gap-10 px-6 py-16 lg:grid-cols-12 lg:py-24">
         <div className="lg:col-span-4">
           <p className="text-sm font-medium text-brand">자주 묻는 질문</p>
           <h2 className="mt-3 font-display text-3xl font-semibold leading-tight text-balance text-ink lg:text-4xl">

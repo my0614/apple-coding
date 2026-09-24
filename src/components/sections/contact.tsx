@@ -19,7 +19,7 @@ export function Contact() {
           background: "radial-gradient(55% 55% at 80% 0%, rgba(226,55,45,0.4), transparent 60%)",
         }}
       />
-      <div className="relative mx-auto grid max-w-6xl gap-12 px-6 py-20 lg:grid-cols-2 lg:py-24">
+      <div className="relative mx-auto grid max-w-6xl gap-12 px-6 py-16 lg:grid-cols-2 lg:py-24">
         <div>
           <h2 className="font-display text-3xl font-semibold leading-tight text-balance text-paper lg:text-4xl">
             함께 배워볼까요?
@@ -86,7 +86,7 @@ export function Contact() {
                 id="contact-name"
                 type="text"
                 required
-                className="w-full rounded-[10px] bg-paper/10 px-4 py-3 text-sm text-paper ring-1 ring-paper/10 outline-none placeholder:text-paper/40 focus:ring-2 focus:ring-brand"
+                className="w-full rounded-[10px] bg-paper/10 px-4 py-3 text-base text-paper ring-1 sm:text-sm ring-paper/10 outline-none placeholder:text-paper/40 focus:ring-2 focus:ring-brand"
                 placeholder="홍길동"
               />
             </div>
@@ -98,7 +98,7 @@ export function Contact() {
                 id="contact-phone"
                 type="tel"
                 required
-                className="w-full rounded-[10px] bg-paper/10 px-4 py-3 text-sm text-paper ring-1 ring-paper/10 outline-none placeholder:text-paper/40 focus:ring-2 focus:ring-brand"
+                className="w-full rounded-[10px] bg-paper/10 px-4 py-3 text-base text-paper ring-1 sm:text-sm ring-paper/10 outline-none placeholder:text-paper/40 focus:ring-2 focus:ring-brand"
                 placeholder="010-0000-0000"
               />
             </div>
@@ -108,7 +108,7 @@ export function Contact() {
               </label>
               <select
                 id="contact-course"
-                className="w-full rounded-[10px] bg-paper/10 px-4 py-3 text-sm text-paper ring-1 ring-paper/10 outline-none focus:ring-2 focus:ring-brand"
+                className="w-full rounded-[10px] bg-paper/10 px-4 py-3 text-base text-paper ring-1 sm:text-sm ring-paper/10 outline-none focus:ring-2 focus:ring-brand"
               >
                 <option className="text-ink">블록코딩 기초</option>
                 <option className="text-ink">파이썬 &amp; 웹</option>
