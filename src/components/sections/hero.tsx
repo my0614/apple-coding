@@ -14,17 +14,15 @@ export function Hero() {
     <section className="bg-background">
       <div className="mx-auto grid max-w-6xl items-center gap-12 px-6 py-18 lg:grid-cols-12 lg:py-24">
         <div className="lg:col-span-7">
-          <ul className="flex flex-wrap items-center gap-2">
-            {HIGHLIGHTS.map((item) => (
-              <li
-                key={item}
-                className="rounded-full border border-border bg-paper px-3 py-1.5 text-[13px] font-semibold text-ink/80"
-              >
+          <ul className="flex flex-wrap items-center gap-x-3 gap-y-1 text-[13px] font-semibold text-ink/50">
+            {HIGHLIGHTS.map((item, index) => (
+              <li key={item} className="flex items-center gap-3">
+                {index > 0 && <span aria-hidden className="text-ink/25">·</span>}
                 {item}
               </li>
             ))}
           </ul>
-          <h1 className="mt-6 text-4xl leading-[1.15] font-black tracking-tight text-balance text-ink lg:text-6xl">
+          <h1 className="mt-5 text-4xl leading-[1.15] font-black tracking-tight text-balance text-ink lg:text-6xl">
             깨끗한 첫 장에서,
             <br />
             <span className="text-brand">코딩을 시작합니다</span>

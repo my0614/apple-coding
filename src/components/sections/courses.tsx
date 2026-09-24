@@ -44,12 +44,18 @@ export function Courses() {
             <div
               key={course.title}
               className={cn(
-                "flex flex-col gap-4 rounded-[18px] p-7",
+                "relative isolate flex flex-col gap-4 overflow-hidden rounded-[18px] p-7",
                 course.highlight
-                  ? "bg-brand text-primary-foreground"
+                  ? "bg-gradient-to-br from-brand to-[#B8261B] text-primary-foreground"
                   : "border border-border bg-cool transition-colors hover:border-brand",
               )}
             >
+              {course.highlight && (
+                <div
+                  aria-hidden
+                  className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(85%_65%_at_100%_0%,rgba(255,255,255,0.4),transparent_60%)]"
+                />
+              )}
               <span
                 className={cn(
                   "font-mono text-sm font-bold",
