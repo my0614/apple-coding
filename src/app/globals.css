@@ -1,5 +1,4 @@
-@import "tailwindcss" source(none);
-@source "../src";
+@import "tailwindcss";
 @import "tw-animate-css";
 
 @custom-variant dark (&:is(.dark *));
@@ -45,8 +44,8 @@
   --color-brand-soft: var(--brand-soft);
   --color-teal: var(--teal);
 
-  --font-display: "Space Grotesk", "Noto Sans KR", sans-serif;
-  --font-body: "Noto Sans KR", "Space Grotesk", sans-serif;
+  --font-display: var(--font-space-grotesk), var(--font-noto-sans-kr), sans-serif;
+  --font-body: var(--font-noto-sans-kr), var(--font-space-grotesk), sans-serif;
 }
 
 :root {

@@ -1,30 +1,9 @@
-import { useState } from "react";
-import { createFileRoute } from "@tanstack/react-router";
+import Image from "next/image";
+
+import { Contact } from "@/components/home/contact";
 import heroDesk from "@/assets/hero-desk.jpg";
 import parentAvatar from "@/assets/parent-avatar.jpg";
 import studentAvatar from "@/assets/student-avatar.jpg";
-
-export const Route = createFileRoute("/")({
-  head: () => ({
-    meta: [
-      { title: "애플코딩학원 | 초·중·고부터 성인까지 코딩 전문 학원" },
-      {
-        name: "description",
-        content:
-          "애플코딩학원 — 블록코딩, 파이썬, 웹 개발, 취업 전환까지 수준별 코딩 교육. 무료 체험 수업을 신청해 보세요.",
-      },
-      { property: "og:title", content: "애플코딩학원" },
-      {
-        property: "og:description",
-        content:
-          "블록코딩, 파이썬, 웹 개발, 취업 전환까지 수준별 코딩 교육. 무료 체험 수업 신청.",
-      },
-      { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary_large_image" },
-    ],
-  }),
-  component: Index,
-});
 
 const NAV_LINKS = [
   { href: "#course", label: "과정" },
@@ -37,8 +16,7 @@ const COURSES = [
   {
     audience: "초등 · 7~12세",
     title: "블록코딩 기초",
-    description:
-      "스크래치와 시각적 블록으로 논리적 사고의 첫 단추를 채웁니다.",
+    description: "스크래치와 시각적 블록으로 논리적 사고의 첫 단추를 채웁니다.",
     schedule: "주 2회 · 90분",
     level: "레벨 A",
   },
@@ -52,8 +30,7 @@ const COURSES = [
   {
     audience: "성인 · 취업 전환",
     title: "전직 트랙",
-    description:
-      "포트폴리오와 면접까지, 개발자 전환을 위한 완성형 과정입니다.",
+    description: "포트폴리오와 면접까지, 개발자 전환을 위한 완성형 과정입니다.",
     schedule: "주 3회 · 180분",
     level: "레벨 C",
   },
@@ -106,17 +83,11 @@ function Header() {
           <span className="grid size-8 place-items-center rounded-[10px] bg-brand font-display font-semibold text-primary-foreground">
             A
           </span>
-          <span className="font-semibold tracking-tight text-ink">
-            애플코딩학원
-          </span>
+          <span className="font-semibold tracking-tight text-ink">애플코딩학원</span>
         </a>
         <nav className="hidden items-center gap-8 text-sm text-ink/70 md:flex">
           {NAV_LINKS.map((link) => (
-            <a
-              key={link.href}
-              href={link.href}
-              className="transition-colors hover:text-ink"
-            >
+            <a key={link.href} href={link.href} className="transition-colors hover:text-ink">
               {link.label}
             </a>
           ))}
@@ -153,8 +124,8 @@ function Hero() {
             코딩을 시작합니다
           </h1>
           <p className="mt-5 max-w-[46ch] text-pretty text-base text-ink/65 lg:text-lg">
-            새 교과서를 펼친 깨끗한 책상처럼, 초보자에게 가장 명확한 배움을
-            설계했습니다. 초·중·고, 취업을 원하는 성인까지 함께.
+            새 교과서를 펼친 깨끗한 책상처럼, 초보자에게 가장 명확한 배움을 설계했습니다. 초·중·고,
+            취업을 원하는 성인까지 함께.
           </p>
           <div className="mt-8 flex flex-wrap items-center gap-3">
             <a
@@ -172,25 +143,24 @@ function Hero() {
           </div>
           <div className="mt-10 flex items-center gap-6 text-sm text-ink/60">
             <div>
-              <span className="block font-display text-2xl font-semibold text-ink">
-                6,400+
-              </span>
+              <span className="block font-display text-2xl font-semibold text-ink">6,400+</span>
               수료생
             </div>
             <div className="h-8 w-px bg-ink/10" />
             <div>
-              <span className="block font-display text-2xl font-semibold text-ink">
-                98%
-              </span>
+              <span className="block font-display text-2xl font-semibold text-ink">98%</span>
               만족도
             </div>
           </div>
         </div>
         <div className="lg:col-span-5">
           <div className="rounded-[20px] bg-paper/65 p-3 ring-1 ring-ink/5 backdrop-blur-2xl">
-            <img
+            <Image
               src={heroDesk}
               alt="코드가 켜진 노트북이 놓인 깨끗한 학습 책상"
+              priority
+              placeholder="blur"
+              sizes="(min-width: 1024px) 40vw, 100vw"
               className="aspect-[4/5] w-full rounded-[14px] object-cover"
             />
           </div>
@@ -216,15 +186,9 @@ function Courses() {
               key={course.title}
               className="rounded-2xl bg-cool/60 p-6 ring-1 ring-ink/5 backdrop-blur-xl"
             >
-              <span className="text-xs font-medium text-ink/50">
-                {course.audience}
-              </span>
-              <h3 className="mt-3 font-display text-lg font-semibold text-ink">
-                {course.title}
-              </h3>
-              <p className="mt-2 text-pretty text-sm text-ink/65">
-                {course.description}
-              </p>
+              <span className="text-xs font-medium text-ink/50">{course.audience}</span>
+              <h3 className="mt-3 font-display text-lg font-semibold text-ink">{course.title}</h3>
+              <p className="mt-2 text-pretty text-sm text-ink/65">{course.description}</p>
               <div className="mt-5 flex items-center justify-between text-xs text-ink/50">
                 <span>{course.schedule}</span>
                 <span className="font-medium text-brand">{course.level}</span>
@@ -248,8 +212,8 @@ function WhyUs() {
               교과서처럼 명확하게
             </h2>
             <p className="mt-4 max-w-[44ch] text-pretty text-base text-ink/65">
-              복잡함은 배움의 적입니다. 우리는 각 단계를 가장 단순한 문장으로
-              정리해, 어디서부터 무엇을 하는지 언제나 보여줍니다.
+              복잡함은 배움의 적입니다. 우리는 각 단계를 가장 단순한 문장으로 정리해, 어디서부터
+              무엇을 하는지 언제나 보여줍니다.
             </p>
           </div>
           <div className="grid gap-4">
@@ -262,12 +226,8 @@ function WhyUs() {
                   {index + 1}
                 </span>
                 <div>
-                  <h3 className="text-sm font-medium text-ink">
-                    {reason.title}
-                  </h3>
-                  <p className="mt-1 text-sm text-ink/60">
-                    {reason.description}
-                  </p>
+                  <h3 className="text-sm font-medium text-ink">{reason.title}</h3>
+                  <p className="mt-1 text-sm text-ink/60">{reason.description}</p>
                 </div>
               </div>
             ))}
@@ -316,13 +276,12 @@ function Testimonials() {
               key={item.name}
               className="rounded-2xl bg-paper/60 p-6 ring-1 ring-ink/5 backdrop-blur-xl"
             >
-              <p className="text-pretty text-base leading-relaxed text-ink/80">
-                {item.quote}
-              </p>
+              <p className="text-pretty text-base leading-relaxed text-ink/80">{item.quote}</p>
               <div className="mt-6 flex items-center gap-3">
-                <img
+                <Image
                   src={item.avatar}
                   alt={`${item.name} 프로필 사진`}
+                  sizes="44px"
                   className="size-11 rounded-full object-cover ring-1 ring-ink/5"
                 />
                 <div>
@@ -338,110 +297,6 @@ function Testimonials() {
   );
 }
 
-function Contact() {
-  const [submitted, setSubmitted] = useState(false);
-
-  return (
-    <section id="contact" className="relative overflow-hidden bg-ink">
-      <div
-        className="pointer-events-none absolute inset-0"
-        style={{
-          background:
-            "radial-gradient(55% 55% at 80% 0%, rgba(226,55,45,0.4), transparent 60%)",
-        }}
-      />
-      <div className="relative mx-auto grid max-w-6xl gap-12 px-6 py-20 lg:grid-cols-2 lg:py-24">
-        <div>
-          <h2 className="font-display text-3xl font-semibold leading-tight text-balance text-paper lg:text-4xl">
-            함께 배워볼까요?
-          </h2>
-          <p className="mt-4 max-w-[42ch] text-pretty text-base text-paper/65">
-            무료 체험 수업을 신청해 주세요. 담당 선생님이 24시간 안에
-            연락드립니다.
-          </p>
-          <div className="mt-8 space-y-3 text-sm text-paper/70">
-            <p>서울 강남구 테헤란로 123, 4층</p>
-            <p>02-1234-5678</p>
-            <p>hello@apple-coding.kr</p>
-          </div>
-        </div>
-        {submitted ? (
-          <div className="grid place-items-center rounded-[18px] bg-paper/10 p-6 ring-1 ring-paper/10 backdrop-blur-xl">
-            <p className="text-center text-base text-paper">
-              상담 신청이 접수되었습니다.
-              <br />
-              <span className="text-sm text-paper/60">
-                담당 선생님이 24시간 안에 연락드릴게요.
-              </span>
-            </p>
-          </div>
-        ) : (
-          <form
-            className="space-y-4 rounded-[18px] bg-paper/10 p-6 ring-1 ring-paper/10 backdrop-blur-xl"
-            onSubmit={(event) => {
-              event.preventDefault();
-              setSubmitted(true);
-            }}
-          >
-            <div>
-              <label
-                htmlFor="contact-name"
-                className="mb-1.5 block text-xs text-paper/60"
-              >
-                이름
-              </label>
-              <input
-                id="contact-name"
-                type="text"
-                required
-                className="w-full rounded-[10px] bg-paper/10 px-4 py-3 text-sm text-paper ring-1 ring-paper/10 outline-none placeholder:text-paper/40 focus:ring-2 focus:ring-brand"
-                placeholder="홍길동"
-              />
-            </div>
-            <div>
-              <label
-                htmlFor="contact-phone"
-                className="mb-1.5 block text-xs text-paper/60"
-              >
-                연락처
-              </label>
-              <input
-                id="contact-phone"
-                type="tel"
-                required
-                className="w-full rounded-[10px] bg-paper/10 px-4 py-3 text-sm text-paper ring-1 ring-paper/10 outline-none placeholder:text-paper/40 focus:ring-2 focus:ring-brand"
-                placeholder="010-0000-0000"
-              />
-            </div>
-            <div>
-              <label
-                htmlFor="contact-course"
-                className="mb-1.5 block text-xs text-paper/60"
-              >
-                관심 과정
-              </label>
-              <select
-                id="contact-course"
-                className="w-full rounded-[10px] bg-paper/10 px-4 py-3 text-sm text-paper ring-1 ring-paper/10 outline-none focus:ring-2 focus:ring-brand"
-              >
-                <option className="text-ink">블록코딩 기초</option>
-                <option className="text-ink">파이썬 &amp; 웹</option>
-                <option className="text-ink">전직 트랙</option>
-              </select>
-            </div>
-            <button
-              type="submit"
-              className="w-full rounded-[10px] bg-brand py-3 text-sm font-medium text-primary-foreground ring-1 ring-brand/30 transition-colors hover:bg-brand/90"
-            >
-              상담 신청하기
-            </button>
-          </form>
-        )}
-      </div>
-    </section>
-  );
-}
-
 function Footer() {
   return (
     <footer className="bg-card">
@@ -452,15 +307,13 @@ function Footer() {
           </span>
           <span className="font-semibold text-ink">애플코딩학원</span>
         </div>
-        <p className="text-xs text-ink/50">
-          © 2026 Apple Coding Academy. All rights reserved.
-        </p>
+        <p className="text-xs text-ink/50">© 2026 Apple Coding Academy. All rights reserved.</p>
       </div>
     </footer>
   );
 }
 
-function Index() {
+export default function Home() {
   return (
     <div className="min-h-screen bg-background font-body text-foreground">
       <Header />
