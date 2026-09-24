@@ -3,6 +3,12 @@ import Link from "next/link";
 
 import heroDesk from "@/assets/hero-desk.jpg";
 
+const HIGHLIGHTS = [
+  "수완지구 10년의 노하우",
+  "교육청 등록 제6806호",
+  "AI 시대 대입·수행평가 융합 연구소",
+];
+
 export function Hero() {
   return (
     <section className="relative overflow-hidden bg-cool">
@@ -15,9 +21,14 @@ export function Hero() {
       />
       <div className="relative mx-auto grid max-w-6xl items-center gap-10 px-6 py-20 lg:grid-cols-12 lg:py-28">
         <div className="lg:col-span-7">
-          <span className="inline-flex items-center gap-2 rounded-full bg-paper/70 px-3 py-1.5 text-xs font-medium text-brand ring-1 ring-ink/5 backdrop-blur-md">
-            2026학년도 신규 과정 오픈
-          </span>
+          <ul className="inline-flex flex-wrap items-center gap-x-3 gap-y-1 rounded-2xl bg-paper/70 px-4 py-2 text-xs font-medium text-brand ring-1 ring-ink/5 backdrop-blur-md sm:rounded-full">
+            {HIGHLIGHTS.map((item, index) => (
+              <li key={item} className="flex items-center gap-3">
+                {index > 0 && <span aria-hidden className="h-3 w-px bg-brand/25" />}
+                {item}
+              </li>
+            ))}
+          </ul>
           <h1 className="mt-6 font-display text-4xl font-semibold leading-tight text-balance text-ink lg:text-5xl">
             깨끗한 첫 장에서,
             <br />

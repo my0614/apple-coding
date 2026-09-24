@@ -3,19 +3,17 @@ import Image from "next/image";
 import academyMap from "@/assets/academy-map.jpg";
 
 // 지도 이미지는 OpenStreetMap 타일로 만든 정적 이미지이며, 학원 위치가 정중앙에 오도록 잘려 있습니다.
-// 누르면 네이버 지도에서 query(학원 이름)로 검색한 결과로 이동합니다.
+// 누르면 네이버 지도의 학원 상세 페이지(placeUrl)로 이동합니다.
 type NaverMapProps = {
   title: string;
   address: string;
-  query: string;
+  placeUrl: string;
 };
 
-export function NaverMap({ title, address, query }: NaverMapProps) {
-  const searchUrl = `https://map.naver.com/p/search/${encodeURIComponent(query)}`;
-
+export function NaverMap({ title, address, placeUrl }: NaverMapProps) {
   return (
     <a
-      href={searchUrl}
+      href={placeUrl}
       target="_blank"
       rel="noopener noreferrer"
       aria-label={`${title} 위치를 네이버 지도에서 보기`}

@@ -119,3 +119,25 @@
     scroll-behavior: smooth;
   }
 }
+
+/* 스크롤 등장 애니메이션 (src/components/site/reveal.tsx) */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition:
+    opacity 0.7s ease-out,
+    transform 0.7s ease-out;
+}
+
+.reveal.reveal-visible {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}

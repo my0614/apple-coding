@@ -8,6 +8,7 @@ const ADDRESS = "전남광주 광산구 임방울대로 330, 8층 802호";
 const PHONE = "062-961-8866";
 const EMAIL = "aqi2255@naver.com";
 const BLOG_URL = "https://blog.naver.com/aqi2255";
+const NAVER_PLACE_URL = "https://map.naver.com/p/entry/place/1541412027";
 
 const contactLinkClass = "transition-colors hover:text-paper";
 
@@ -15,7 +16,7 @@ export function Contact() {
   const [submitted, setSubmitted] = useState(false);
 
   return (
-    <section id="contact" className="relative overflow-hidden bg-ink">
+    <section id="contact" className="relative scroll-mt-16 overflow-hidden bg-ink">
       <div
         className="pointer-events-none absolute inset-0"
         style={{
@@ -61,7 +62,7 @@ export function Contact() {
             <NaverMap
               title="애플코딩학원"
               address="광주 광산구 임방울대로 330"
-              query="애플코딩학원"
+              placeUrl={NAVER_PLACE_URL}
             />
           </div>
         </div>
