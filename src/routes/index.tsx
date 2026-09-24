@@ -347,7 +347,7 @@ function Contact() {
         className="pointer-events-none absolute inset-0"
         style={{
           background:
-            "radial-gradient(55% 55% at 80% 0%, rgba(47,109,240,0.4), transparent 60%)",
+            "radial-gradient(55% 55% at 80% 0%, rgba(226,55,45,0.4), transparent 60%)",
         }}
       />
       <div className="relative mx-auto grid max-w-6xl gap-12 px-6 py-20 lg:grid-cols-2 lg:py-24">
