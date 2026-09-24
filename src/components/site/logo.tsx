@@ -1,0 +1,35 @@
+import { cn } from "@/lib/utils";
+
+export function LogoMark({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 100 100" className={cn("size-8 shrink-0", className)} aria-hidden="true">
+      <path
+        d="M50 26 C36 14 6 18 6 52 C6 80 26 98 40 96 C45 95 47 93 50 93 C53 93 55 95 60 96 C74 98 94 80 94 52 C94 18 64 14 50 26 Z"
+        className="fill-brand"
+      />
+      <path d="M53 20 C53 8 63 2 75 2 C75 14 65 20 53 20 Z" className="fill-brand" />
+      <path
+        d="M38 36 L38 78 L48.5 68 L56 83 L63.5 79.5 L56 65 L70 65 Z"
+        className="fill-paper stroke-ink"
+        strokeWidth={5}
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}
+
+export function Logo({ className }: { className?: string }) {
+  return (
+    <span className={cn("flex items-center gap-[7px]", className)}>
+      <LogoMark />
+      <span className="flex flex-col gap-0.5 leading-none">
+        <span className="font-display text-base font-bold tracking-tight text-ink">
+          애플코딩학원
+        </span>
+        <span className="font-display text-[9px] font-bold tracking-[0.14em] text-brand">
+          APPLE CODING
+        </span>
+      </span>
+    </span>
+  );
+}

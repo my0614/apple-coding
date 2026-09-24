@@ -5,6 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 
+import { Logo } from "@/components/site/logo";
 import { cn } from "@/lib/utils";
 
 const NAV_LINKS = [
@@ -22,10 +23,7 @@ export function Header() {
     <header className="sticky top-0 z-50 border-b border-ink/5 bg-paper/55 backdrop-blur-xl">
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-6">
         <Link href="/" onClick={closeMenu} className="flex items-center gap-2">
-          <span className="grid size-8 place-items-center rounded-[10px] bg-brand font-display font-semibold text-primary-foreground">
-            A
-          </span>
-          <span className="font-semibold tracking-tight text-ink">애플코딩학원</span>
+          <Logo />
         </Link>
         <nav className="hidden items-center gap-8 text-sm text-ink/70 md:flex">
           {NAV_LINKS.map((link) => (
