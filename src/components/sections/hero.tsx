@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 import heroDesk from "@/assets/hero-desk.jpg";
+import { cn } from "@/lib/utils";
 
 import { TypingText } from "./typing-text";
 
@@ -27,12 +28,30 @@ export function Hero() {
       />
       <div className="relative mx-auto grid max-w-6xl items-center gap-10 px-6 pt-12 pb-16 lg:grid-cols-12 lg:py-28">
         <div className="lg:col-span-7">
-          <ul className="hero-in flex flex-wrap gap-2" style={delay(0)}>
-            {HIGHLIGHTS.map((item) => (
+          {/* 휴대폰: 한 줄에 하나 / 태블릿·작은 노트북: 두 줄 / 넓은 화면: 한 줄에 | 로 구분 */}
+          <ul
+            className="hero-in flex flex-col gap-1 text-[15px] font-semibold text-sage sm:flex-row sm:flex-wrap sm:items-center sm:gap-x-3 lg:text-base"
+            style={delay(0)}
+          >
+            {HIGHLIGHTS.map((item, index) => (
               <li
                 key={item}
-                className="rounded-full bg-paper/70 px-3 py-1.5 text-[13px] font-medium text-brand ring-1 ring-ink/5 backdrop-blur-md"
+                className={cn(
+                  "flex items-center gap-3",
+                  index === 2 && "sm:basis-full xl:basis-auto",
+                )}
               >
+                {index > 0 && (
+                  <span
+                    aria-hidden
+                    className={cn(
+                      "text-ink/20",
+                      index === 2 ? "hidden xl:inline" : "hidden sm:inline",
+                    )}
+                  >
+                    |
+                  </span>
+                )}
                 {item}
               </li>
             ))}
@@ -62,20 +81,6 @@ export function Hero() {
             >
               수업 시간표
             </Link>
-          </div>
-          <div
-            className="hero-in mt-10 flex items-center gap-6 text-sm text-ink/60"
-            style={delay(820)}
-          >
-            <div>
-              <span className="block font-display text-2xl font-semibold text-ink">6,400+</span>
-              수료생
-            </div>
-            <div className="h-8 w-px bg-ink/10" />
-            <div>
-              <span className="block font-display text-2xl font-semibold text-ink">98%</span>
-              만족도
-            </div>
           </div>
         </div>
         <div className="hero-in lg:col-span-5" style={delay(300)}>

@@ -2,6 +2,8 @@ import Link from "next/link";
 
 import { SITE } from "@/lib/site";
 
+import { Logo } from "./logo";
+
 const FOOTER_LINKS = [
   { href: "/curriculum", label: "커리큘럼" },
   { href: "/process", label: "수업 진행과정" },
@@ -16,12 +18,7 @@ export function Footer() {
       <div className="mx-auto max-w-6xl px-6 pt-12 pb-28 md:pb-10">
         <div className="grid gap-10 md:grid-cols-12">
           <div className="md:col-span-5">
-            <div className="flex items-center gap-2">
-              <span className="grid size-7 place-items-center rounded-lg bg-brand font-display font-semibold text-primary-foreground">
-                A
-              </span>
-              <span className="font-semibold text-ink">{SITE.name}</span>
-            </div>
+            <Logo size="sm" />
             <p className="mt-3 text-xs font-medium text-brand">{SITE.registration}</p>
             <dl className="mt-5 grid grid-cols-[auto_1fr] gap-x-4 gap-y-2 text-xs">
               <dt className="text-ink/40">위치</dt>

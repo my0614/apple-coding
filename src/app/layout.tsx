@@ -26,7 +26,6 @@ export const metadata: Metadata = {
   description:
     "애플코딩학원 — 블록코딩, 파이썬, 웹 개발, 취업 전환까지 수준별 코딩 교육. 무료 체험 수업을 신청해 보세요.",
   authors: [{ name: "애플코딩학원" }],
-  icons: { icon: "/favicon.ico" },
   openGraph: {
     title: "애플코딩학원",
     description: "블록코딩, 파이썬, 웹 개발, 취업 전환까지 수준별 코딩 교육. 무료 체험 수업 신청.",

@@ -7,6 +7,8 @@ import { useState } from "react";
 
 import { cn } from "@/lib/utils";
 
+import { Logo } from "./logo";
+
 const NAV_LINKS = [
   { href: "/curriculum", label: "커리큘럼" },
   { href: "/process", label: "수업 진행과정" },
@@ -21,11 +23,8 @@ export function Header() {
   return (
     <header className="sticky top-0 z-50 border-b border-ink/5 bg-paper/55 backdrop-blur-xl">
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-6">
-        <Link href="/" onClick={closeMenu} className="flex items-center gap-2">
-          <span className="grid size-8 place-items-center rounded-[10px] bg-brand font-display font-semibold text-primary-foreground">
-            A
-          </span>
-          <span className="font-semibold tracking-tight text-ink">애플코딩학원</span>
+        <Link href="/" onClick={closeMenu} aria-label="애플코딩학원 홈">
+          <Logo />
         </Link>
         <nav className="hidden items-center gap-8 text-base font-semibold text-ink/75 md:flex">
           {NAV_LINKS.map((link) => (
