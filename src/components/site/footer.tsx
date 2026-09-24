@@ -57,14 +57,14 @@ export function Footer() {
           </nav>
           <div className="md:col-span-3">
             <p className="text-xs font-medium text-ink/40">소식</p>
-            <div className="mt-3 flex flex-col items-start gap-2">
+            <div className="mt-3 flex flex-col items-start gap-3">
               <a
                 href={SITE.blogUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 rounded-full bg-cool px-3 py-1.5 text-sm text-ink/75 ring-1 ring-ink/5 transition-colors hover:text-ink"
+                className="inline-flex items-center gap-2 text-base font-semibold text-ink/80 transition-colors hover:text-brand"
               >
-                <span className="grid size-5 place-items-center rounded bg-[#03c75a] text-[10px] font-bold text-white">
+                <span className="grid size-4 place-items-center rounded-sm bg-[#03c75a] text-[9px] font-bold text-white">
                   N
                 </span>
                 네이버 블로그
@@ -73,9 +73,9 @@ export function Footer() {
                 href={SITE.naverPlaceUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 rounded-full bg-cool px-3 py-1.5 text-sm text-ink/75 ring-1 ring-ink/5 transition-colors hover:text-ink"
+                className="inline-flex items-center gap-2 text-base font-semibold text-ink/80 transition-colors hover:text-brand"
               >
-                <span className="grid size-5 place-items-center rounded bg-[#03c75a] text-[10px] font-bold text-white">
+                <span className="grid size-4 place-items-center rounded-sm bg-[#03c75a] text-[9px] font-bold text-white">
                   N
                 </span>
                 네이버 지도

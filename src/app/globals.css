@@ -43,6 +43,7 @@
   --color-brand: var(--brand);
   --color-brand-soft: var(--brand-soft);
   --color-sage: var(--sage);
+  --color-mist: var(--mist);
   --color-teal: var(--teal);
 
   --font-display: var(--font-space-grotesk), var(--font-noto-sans-kr), sans-serif;
@@ -59,6 +60,7 @@
   --brand: oklch(0.46 0.18 22); /* 깊은 적색 (#a50b25) */
   --brand-soft: oklch(0.93 0.04 22);
   --sage: oklch(0.46 0.06 158); /* 차분한 초록 (히어로 소개 문구) */
+  --mist: oklch(0.975 0.008 235); /* 맑은 하늘빛 흰색 (수업 진행과정 배경) */
   --teal: oklch(0.7 0.13 185); /* #14b8a6 */
 
   /* shadcn semantic mapping */

@@ -3,7 +3,7 @@ import Link from "next/link";
 // 하위 페이지 맨 아래에 붙는 무료 체험 신청 유도 영역입니다.
 export function TrialCta() {
   return (
-    <section className="bg-cool">
+    <section className="bg-card">
       <div className="mx-auto max-w-6xl px-6 py-16 lg:py-20">
         <div className="flex flex-col items-start justify-between gap-6 rounded-[20px] bg-ink p-8 lg:flex-row lg:items-center lg:p-10">
           <div>

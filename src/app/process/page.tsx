@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 import { WhyUs } from "@/components/sections/why-us";
+import { ClassList } from "@/components/sections/class-list";
 import { TrialCta } from "@/components/sections/trial-cta";
 import { Reveal } from "@/components/site/reveal";
 
@@ -13,6 +14,9 @@ export default function ProcessPage() {
     <>
       <Reveal>
         <WhyUs />
+      </Reveal>
+      <Reveal>
+        <ClassList />
       </Reveal>
       <Reveal>
         <TrialCta />
