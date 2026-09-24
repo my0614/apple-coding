@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import heroDesk from "@/assets/hero-desk.jpg";
+import heroDesk from "@/assets/hero-desk.png";
 
 const HIGHLIGHTS = [
   "수완지구 10년의 노하우",
