@@ -1,6 +1,9 @@
 import type { Metadata, Viewport } from "next";
 import { Noto_Sans_KR, Space_Grotesk } from "next/font/google";
 
+import { Footer } from "@/components/site/footer";
+import { Header } from "@/components/site/header";
+
 import "./globals.css";
 
 const notoSansKr = Noto_Sans_KR({
@@ -41,7 +44,13 @@ export const viewport: Viewport = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="ko" className={`${notoSansKr.variable} ${spaceGrotesk.variable}`}>
-      <body>{children}</body>
+      <body>
+        <div className="flex min-h-screen flex-col bg-background font-body text-foreground">
+          <Header />
+          <main className="flex-1">{children}</main>
+          <Footer />
+        </div>
+      </body>
     </html>
   );
 }

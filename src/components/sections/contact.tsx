@@ -2,6 +2,15 @@
 
 import { useState } from "react";
 
+import { NaverMap } from "./naver-map";
+
+const ADDRESS = "전남광주 광산구 임방울대로 330, 8층 802호";
+const PHONE = "062-961-8866";
+const EMAIL = "aqi2255@naver.com";
+const BLOG_URL = "https://blog.naver.com/aqi2255";
+
+const contactLinkClass = "transition-colors hover:text-paper";
+
 export function Contact() {
   const [submitted, setSubmitted] = useState(false);
 
@@ -21,10 +30,39 @@ export function Contact() {
           <p className="mt-4 max-w-[42ch] text-pretty text-base text-paper/65">
             무료 체험 수업을 신청해 주세요. 담당 선생님이 24시간 안에 연락드립니다.
           </p>
-          <div className="mt-8 space-y-3 text-sm text-paper/70">
-            <p>서울 강남구 테헤란로 123, 4층</p>
-            <p>02-1234-5678</p>
-            <p>hello@apple-coding.kr</p>
+          <dl className="mt-8 grid grid-cols-[auto_1fr] gap-x-6 gap-y-3 text-sm">
+            <dt className="text-paper/45">위치</dt>
+            <dd className="text-paper/75">{ADDRESS}</dd>
+            <dt className="text-paper/45">전화번호</dt>
+            <dd className="text-paper/75">
+              <a href={`tel:${PHONE}`} className={contactLinkClass}>
+                {PHONE}
+              </a>
+            </dd>
+            <dt className="text-paper/45">이메일</dt>
+            <dd className="text-paper/75">
+              <a href={`mailto:${EMAIL}`} className={contactLinkClass}>
+                {EMAIL}
+              </a>
+            </dd>
+            <dt className="text-paper/45">블로그</dt>
+            <dd className="text-paper/75">
+              <a
+                href={BLOG_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={contactLinkClass}
+              >
+                blog.naver.com/aqi2255 ↗
+              </a>
+            </dd>
+          </dl>
+          <div className="mt-8">
+            <NaverMap
+              title="애플코딩학원"
+              address="광주 광산구 임방울대로 330"
+              query="애플코딩학원"
+            />
           </div>
         </div>
         {submitted ? (
