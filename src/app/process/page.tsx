@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 
-import { WhyUs } from "@/components/sections/why-us";
+import { Roadmap } from "@/components/sections/roadmap";
 import { ClassList } from "@/components/sections/class-list";
 import { TrialCta } from "@/components/sections/trial-cta";
 import { Reveal } from "@/components/site/reveal";
@@ -13,7 +13,7 @@ export default function ProcessPage() {
   return (
     <>
       <Reveal>
-        <WhyUs />
+        <Roadmap />
       </Reveal>
       <Reveal>
         <ClassList />

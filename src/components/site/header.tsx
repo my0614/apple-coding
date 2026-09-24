@@ -45,7 +45,7 @@ export function Header() {
           <Link
             href="/#contact"
             onClick={closeMenu}
-            className="rounded-full bg-ink px-4 py-2 text-sm font-medium text-paper ring-1 ring-ink/10"
+            className="rounded-full bg-ink px-3 py-2 text-[13px] font-medium whitespace-nowrap text-paper ring-1 ring-ink/10 min-[375px]:px-4 min-[375px]:text-sm"
           >
             상담 신청
           </Link>

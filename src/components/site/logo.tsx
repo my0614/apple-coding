@@ -25,9 +25,12 @@ export function LogoMark({ className }: { className?: string }) {
 export function Logo({ size = "md" }: { size?: "sm" | "md" }) {
   return (
     <span className="flex items-center gap-2">
-      <LogoMark className={size === "md" ? "size-9" : "size-8"} />
+      <LogoMark className={size === "md" ? "size-8 min-[375px]:size-9" : "size-8"} />
       <span
-        className={cn("font-bold tracking-tight text-ink", size === "md" ? "text-lg" : "text-base")}
+        className={cn(
+          "font-bold tracking-tight text-ink",
+          size === "md" ? "text-base min-[375px]:text-lg" : "text-base",
+        )}
       >
         {SITE.name}
       </span>
