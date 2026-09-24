@@ -6,7 +6,7 @@
 
 /*
  * Design system — 애플코딩학원 "Frosted editorial calm"
- * Clean cool-white surfaces, frosted glass cards, calm blue + teal accents.
+ * Clean white base, frosted glass cards, apple-red accent.
  * All colors use oklch and live here — never hardcode colors in components.
  */
 
@@ -53,11 +53,11 @@
   --radius: 0.75rem;
 
   /* Core palette */
-  --ink: oklch(0.21 0.015 264); /* #171a20 deep charcoal-blue */
+  --ink: oklch(0.21 0.015 264); /* #171a20 deep charcoal */
   --paper: oklch(0.985 0.002 250); /* near white */
-  --cool: oklch(0.958 0.011 262); /* #eef2fb cool mist */
-  --brand: oklch(0.57 0.2 263); /* #2f6df0 calm blue */
-  --brand-soft: oklch(0.92 0.035 263);
+  --cool: oklch(0.965 0.008 25); /* #faf1f0 warm red-tinted mist */
+  --brand: oklch(0.585 0.21 27); /* apple red */
+  --brand-soft: oklch(0.93 0.04 27);
   --teal: oklch(0.7 0.13 185); /* #14b8a6 */
 
   /* shadcn semantic mapping */
