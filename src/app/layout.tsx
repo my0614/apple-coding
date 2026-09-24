@@ -22,7 +22,7 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 export const metadata: Metadata = {
-  title: "애플코딩학원 | 초·중·고부터 성인까지 코딩 전문 학원",
+  title: "생성형 AI 시대, 미래를 바꾸는 코딩 교육의 기준 | 애플코딩학원",
   description:
     "애플코딩학원 — 블록코딩, 파이썬, 웹 개발, 취업 전환까지 수준별 코딩 교육. 무료 체험 수업을 신청해 보세요.",
   authors: [{ name: "애플코딩학원" }],

@@ -31,15 +31,13 @@ export function Hero() {
               </li>
             ))}
           </ul>
-          <h1 className="mt-6 font-display text-4xl font-semibold leading-tight text-balance text-ink lg:text-5xl">
-            깨끗한 첫 장에서,
+          <h1 className="mt-6 font-display text-[1.75rem] font-semibold min-[375px]:text-4xl leading-tight text-balance text-ink lg:text-5xl">
+            생성형 AI 시대
             <br />
-            코딩을 시작합니다
+            미래를 바꾸는 <br className="sm:hidden" />
+            코딩 교육의 기준
+            <span className="mt-2 block font-bold text-crimson">애플코딩학원</span>
           </h1>
-          <p className="mt-5 max-w-[46ch] text-pretty text-base text-ink/65 lg:text-lg">
-            새 교과서를 펼친 깨끗한 책상처럼, 초보자에게 가장 명확한 배움을 설계했습니다. 초·중·고,
-            취업을 원하는 성인까지 함께.
-          </p>
           <div className="mt-8 flex flex-wrap items-center gap-3">
             <Link
               href="/curriculum"

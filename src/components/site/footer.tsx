@@ -48,10 +48,10 @@ export function Footer() {
           </div>
           <nav className="md:col-span-3 md:col-start-7" aria-label="바로가기">
             <p className="text-xs font-medium text-ink/40">바로가기</p>
-            <ul className="mt-3 space-y-2 text-sm">
+            <ul className="mt-3 space-y-3 text-base font-semibold">
               {FOOTER_LINKS.map((link) => (
                 <li key={link.href}>
-                  <Link href={link.href} className="text-ink/65 transition-colors hover:text-ink">
+                  <Link href={link.href} className="text-ink/80 transition-colors hover:text-brand">
                     {link.label}
                   </Link>
                 </li>

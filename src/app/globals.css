@@ -42,6 +42,7 @@
   --color-cool: var(--cool);
   --color-brand: var(--brand);
   --color-brand-soft: var(--brand-soft);
+  --color-crimson: var(--crimson);
   --color-teal: var(--teal);
 
   --font-display: var(--font-space-grotesk), var(--font-noto-sans-kr), sans-serif;
@@ -57,6 +58,7 @@
   --cool: oklch(0.965 0.008 25); /* #faf1f0 warm red-tinted mist */
   --brand: oklch(0.585 0.21 27); /* apple red */
   --brand-soft: oklch(0.93 0.04 27);
+  --crimson: oklch(0.46 0.18 22); /* 깊은 적색 (히어로 학원명) */
   --teal: oklch(0.7 0.13 185); /* #14b8a6 */
 
   /* shadcn semantic mapping */

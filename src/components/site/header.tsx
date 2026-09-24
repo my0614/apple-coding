@@ -27,7 +27,7 @@ export function Header() {
           </span>
           <span className="font-semibold tracking-tight text-ink">애플코딩학원</span>
         </Link>
-        <nav className="hidden items-center gap-8 text-sm text-ink/70 md:flex">
+        <nav className="hidden items-center gap-8 text-base font-semibold text-ink/75 md:flex">
           {NAV_LINKS.map((link) => (
             <Link
               key={link.href}
@@ -35,7 +35,7 @@ export function Header() {
               aria-current={pathname === link.href ? "page" : undefined}
               className={cn(
                 "transition-colors hover:text-ink",
-                pathname === link.href && "font-medium text-ink",
+                pathname === link.href && "text-brand hover:text-brand",
               )}
             >
               {link.label}
@@ -72,8 +72,8 @@ export function Header() {
                   onClick={closeMenu}
                   aria-current={pathname === link.href ? "page" : undefined}
                   className={cn(
-                    "block rounded-lg px-2 py-3 text-base text-ink/70 transition-colors hover:bg-ink/5 hover:text-ink",
-                    pathname === link.href && "font-medium text-brand",
+                    "block rounded-lg px-2 py-3.5 text-lg font-semibold text-ink/80 transition-colors hover:bg-ink/5 hover:text-ink",
+                    pathname === link.href && "text-brand",
                   )}
                 >
                   {link.label}
