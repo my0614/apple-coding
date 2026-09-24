@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Noto_Sans_KR, Space_Grotesk } from "next/font/google";
 
+import { CallButton } from "@/components/site/call-button";
 import { Footer } from "@/components/site/footer";
 import { Header } from "@/components/site/header";
 
@@ -49,6 +50,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <Header />
           <main className="flex-1">{children}</main>
           <Footer />
+          <CallButton />
         </div>
       </body>
     </html>

@@ -2,13 +2,9 @@
 
 import { useState } from "react";
 
-import { NaverMap } from "./naver-map";
+import { SITE } from "@/lib/site";
 
-const ADDRESS = "전남광주 광산구 임방울대로 330, 8층 802호";
-const PHONE = "062-961-8866";
-const EMAIL = "aqi2255@naver.com";
-const BLOG_URL = "https://blog.naver.com/aqi2255";
-const NAVER_PLACE_URL = "https://map.naver.com/p/entry/place/1541412027";
+import { NaverMap } from "./naver-map";
 
 const contactLinkClass = "transition-colors hover:text-paper";
 
@@ -33,23 +29,23 @@ export function Contact() {
           </p>
           <dl className="mt-8 grid grid-cols-[auto_1fr] gap-x-6 gap-y-3 text-sm">
             <dt className="text-paper/45">위치</dt>
-            <dd className="text-paper/75">{ADDRESS}</dd>
+            <dd className="text-paper/75">{SITE.address}</dd>
             <dt className="text-paper/45">전화번호</dt>
             <dd className="text-paper/75">
-              <a href={`tel:${PHONE}`} className={contactLinkClass}>
-                {PHONE}
+              <a href={`tel:${SITE.phone}`} className={contactLinkClass}>
+                {SITE.phone}
               </a>
             </dd>
             <dt className="text-paper/45">이메일</dt>
             <dd className="text-paper/75">
-              <a href={`mailto:${EMAIL}`} className={contactLinkClass}>
-                {EMAIL}
+              <a href={`mailto:${SITE.email}`} className={contactLinkClass}>
+                {SITE.email}
               </a>
             </dd>
             <dt className="text-paper/45">블로그</dt>
             <dd className="text-paper/75">
               <a
-                href={BLOG_URL}
+                href={SITE.blogUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className={contactLinkClass}
@@ -62,7 +58,7 @@ export function Contact() {
             <NaverMap
               title="애플코딩학원"
               address="광주 광산구 임방울대로 330"
-              placeUrl={NAVER_PLACE_URL}
+              placeUrl={SITE.naverPlaceUrl}
             />
           </div>
         </div>
