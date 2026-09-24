@@ -11,68 +11,63 @@ const HIGHLIGHTS = [
 
 export function Hero() {
   return (
-    <section className="relative overflow-hidden bg-cool">
-      <div
-        className="pointer-events-none absolute inset-0"
-        style={{
-          background:
-            "radial-gradient(60% 60% at 78% 10%, rgba(120,170,255,0.35), transparent 60%), radial-gradient(50% 50% at 15% 90%, rgba(20,184,166,0.22), transparent 60%)",
-        }}
-      />
-      <div className="relative mx-auto grid max-w-6xl items-center gap-10 px-6 py-20 lg:grid-cols-12 lg:py-28">
+    <section className="bg-background">
+      <div className="mx-auto grid max-w-6xl items-center gap-12 px-6 py-18 lg:grid-cols-12 lg:py-24">
         <div className="lg:col-span-7">
-          <ul className="inline-flex flex-wrap items-center gap-x-3 gap-y-1 rounded-2xl bg-paper/70 px-4 py-2 text-xs font-medium text-brand ring-1 ring-ink/5 backdrop-blur-md sm:rounded-full">
-            {HIGHLIGHTS.map((item, index) => (
-              <li key={item} className="flex items-center gap-3">
-                {index > 0 && <span aria-hidden className="h-3 w-px bg-brand/25" />}
+          <ul className="flex flex-wrap items-center gap-2">
+            {HIGHLIGHTS.map((item) => (
+              <li
+                key={item}
+                className="rounded-full border border-border bg-paper px-3 py-1.5 text-[13px] font-semibold text-ink/80"
+              >
                 {item}
               </li>
             ))}
           </ul>
-          <h1 className="mt-6 font-display text-4xl font-semibold leading-tight text-balance text-ink lg:text-5xl">
+          <h1 className="mt-6 text-4xl leading-[1.15] font-black tracking-tight text-balance text-ink lg:text-6xl">
             깨끗한 첫 장에서,
             <br />
-            코딩을 시작합니다
+            <span className="text-brand">코딩을 시작합니다</span>
           </h1>
-          <p className="mt-5 max-w-[46ch] text-pretty text-base text-ink/65 lg:text-lg">
+          <p className="mt-5 max-w-[46ch] text-pretty text-base leading-[1.7] text-ink/60 lg:text-lg">
             새 교과서를 펼친 깨끗한 책상처럼, 초보자에게 가장 명확한 배움을 설계했습니다. 초·중·고,
             취업을 원하는 성인까지 함께.
           </p>
           <div className="mt-8 flex flex-wrap items-center gap-3">
             <Link
               href="/curriculum"
-              className="inline-flex items-center gap-2 rounded-full bg-brand px-5 py-3 text-sm font-medium text-primary-foreground ring-1 ring-brand/20"
+              className="inline-flex items-center gap-2 rounded-xl bg-brand px-6 py-4 text-[15px] font-bold text-primary-foreground transition-colors hover:bg-brand-hover"
             >
               커리큘럼 살펴보기
             </Link>
             <Link
               href="/schedule"
-              className="inline-flex items-center gap-2 rounded-full bg-paper/60 px-5 py-3 text-sm font-medium text-ink ring-1 ring-ink/5 backdrop-blur-md"
+              className="inline-flex items-center gap-2 rounded-xl border border-border bg-paper px-6 py-4 text-[15px] font-bold text-ink transition-colors hover:border-ink"
             >
               수업 시간표
             </Link>
           </div>
           <div className="mt-10 flex items-center gap-6 text-sm text-ink/60">
             <div>
-              <span className="block font-display text-2xl font-semibold text-ink">6,400+</span>
+              <span className="block text-3xl font-black tracking-tight text-ink">6,400+</span>
               수료생
             </div>
-            <div className="h-8 w-px bg-ink/10" />
+            <div className="h-8 w-px bg-border" />
             <div>
-              <span className="block font-display text-2xl font-semibold text-ink">98%</span>
+              <span className="block text-3xl font-black tracking-tight text-ink">98%</span>
               만족도
             </div>
           </div>
         </div>
         <div className="lg:col-span-5">
-          <div className="rounded-[20px] bg-paper/65 p-3 ring-1 ring-ink/5 backdrop-blur-2xl">
+          <div className="overflow-hidden rounded-[20px] bg-paper shadow-[0_30px_60px_-30px_rgba(23,18,15,0.35)] ring-1 ring-ink/5">
             <Image
               src={heroDesk}
               alt="코드가 켜진 노트북이 놓인 깨끗한 학습 책상"
               priority
               placeholder="blur"
               sizes="(min-width: 1024px) 40vw, 100vw"
-              className="aspect-[4/5] w-full rounded-[14px] object-cover"
+              className="aspect-[4/5] w-full object-cover"
             />
           </div>
         </div>

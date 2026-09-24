@@ -4,10 +4,17 @@
 @custom-variant dark (&:is(.dark *));
 
 /*
- * Design system — 애플코딩학원 "Frosted editorial calm"
- * Clean white base, frosted glass cards, apple-red accent.
- * All colors use oklch and live here — never hardcode colors in components.
+ * Design system — 애플코딩학원 "Clean textbook editorial"
+ * Warm off-white base, flat bordered cards, apple-red accent.
+ * Colors live here — never hardcode colors in components.
  */
+
+@font-face {
+  font-family: "GmarketSans";
+  src: url("/fonts/GmarketSansBold.woff") format("woff");
+  font-weight: 700;
+  font-display: swap;
+}
 
 @theme inline {
   --radius-sm: calc(var(--radius) - 4px);
@@ -42,42 +49,47 @@
   --color-cool: var(--cool);
   --color-brand: var(--brand);
   --color-brand-soft: var(--brand-soft);
+  --color-brand-hover: var(--brand-hover);
   --color-teal: var(--teal);
 
-  --font-display: var(--font-space-grotesk), var(--font-noto-sans-kr), sans-serif;
-  --font-body: var(--font-noto-sans-kr), var(--font-space-grotesk), sans-serif;
+  --font-display: var(--font-pretendard);
+  --font-body: var(--font-pretendard);
+  --font-mono: var(--font-jetbrains-mono), monospace;
+  --font-logo: "GmarketSans", var(--font-pretendard);
 }
 
 :root {
   --radius: 0.75rem;
+  --font-pretendard: "Pretendard", -apple-system, sans-serif;
 
-  /* Core palette */
-  --ink: oklch(0.21 0.015 264); /* #171a20 deep charcoal */
-  --paper: oklch(0.985 0.002 250); /* near white */
-  --cool: oklch(0.965 0.008 25); /* #faf1f0 warm red-tinted mist */
-  --brand: oklch(0.585 0.21 27); /* apple red */
-  --brand-soft: oklch(0.93 0.04 27);
+  /* Core palette — matches the approved 애플코딩학원 design comp */
+  --ink: #17120f;
+  --paper: #ffffff;
+  --cool: #faf8f5; /* warm page background */
+  --brand: #e8392b; /* apple red */
+  --brand-hover: #c92e21;
+  --brand-soft: #fdecea;
   --teal: oklch(0.7 0.13 185); /* #14b8a6 */
 
   /* shadcn semantic mapping */
-  --background: var(--paper);
+  --background: var(--cool);
   --foreground: var(--ink);
-  --card: oklch(1 0 0);
+  --card: var(--paper);
   --card-foreground: var(--ink);
-  --popover: oklch(1 0 0);
+  --popover: var(--paper);
   --popover-foreground: var(--ink);
   --primary: var(--brand);
   --primary-foreground: var(--paper);
-  --secondary: var(--cool);
+  --secondary: #f3f0ec;
   --secondary-foreground: var(--ink);
-  --muted: var(--cool);
-  --muted-foreground: oklch(0.5 0.02 262);
-  --accent: var(--cool);
+  --muted: #f3f0ec;
+  --muted-foreground: #5a524d;
+  --accent: #f3f0ec;
   --accent-foreground: var(--ink);
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: var(--paper);
-  --border: oklch(0.21 0.015 264 / 8%);
-  --input: oklch(0.21 0.015 264 / 12%);
+  --border: #ece7e1;
+  --input: #ddd5cc;
   --ring: var(--brand);
 }
 

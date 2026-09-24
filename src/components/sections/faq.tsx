@@ -33,28 +33,26 @@ const FAQS = [
 
 export function Faq() {
   return (
-    <section className="bg-card">
+    <section className="border-y border-border bg-paper">
       <div className="mx-auto grid max-w-6xl gap-10 px-6 py-20 lg:grid-cols-12 lg:py-24">
         <div className="lg:col-span-4">
-          <p className="text-sm font-medium text-brand">자주 묻는 질문</p>
-          <h2 className="mt-3 font-display text-3xl font-semibold leading-tight text-balance text-ink lg:text-4xl">
+          <span className="font-mono text-[13px] font-bold tracking-[0.16em] text-brand">
+            FAQ
+          </span>
+          <h2 className="mt-3 text-3xl font-black tracking-tight text-balance text-ink lg:text-4xl">
             궁금한 점을 모았어요
           </h2>
-          <p className="mt-4 text-sm text-ink/60">
+          <p className="mt-4 text-[15px] leading-[1.7] text-ink/60">
             더 궁금한 점은 상담 신청을 남겨주시면 바로 답변드릴게요.
           </p>
         </div>
-        <Accordion type="single" collapsible className="lg:col-span-8">
+        <Accordion type="single" collapsible className="border-t border-border lg:col-span-8">
           {FAQS.map((faq) => (
-            <AccordionItem
-              key={faq.question}
-              value={faq.question}
-              className="border-b border-ink/10"
-            >
-              <AccordionTrigger className="py-5 text-base text-ink hover:no-underline">
+            <AccordionItem key={faq.question} value={faq.question} className="border-b border-border">
+              <AccordionTrigger className="py-[22px] text-lg font-bold text-ink hover:no-underline">
                 {faq.question}
               </AccordionTrigger>
-              <AccordionContent className="pb-5 text-sm leading-relaxed text-ink/65">
+              <AccordionContent className="pb-[22px] text-[15px] leading-[1.7] text-ink/60">
                 {faq.answer}
               </AccordionContent>
             </AccordionItem>

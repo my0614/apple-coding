@@ -23,10 +23,10 @@ export function Logo({ className }: { className?: string }) {
     <span className={cn("flex items-center gap-[7px]", className)}>
       <LogoMark />
       <span className="flex flex-col gap-0.5 leading-none">
-        <span className="font-display text-base font-bold tracking-tight text-ink">
+        <span className="font-logo text-base font-bold tracking-tight text-ink">
           애플코딩학원
         </span>
-        <span className="font-display text-[9px] font-bold tracking-[0.14em] text-brand">
+        <span className="font-logo text-[9px] font-bold tracking-[0.14em] text-brand">
           APPLE CODING
         </span>
       </span>

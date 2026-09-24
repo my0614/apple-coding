@@ -22,20 +22,26 @@ const TESTIMONIALS = [
 
 export function Testimonials() {
   return (
-    <section className="bg-cool">
+    <section className="bg-background">
       <div className="mx-auto max-w-6xl px-6 py-20 lg:py-24">
-        <p className="text-sm font-medium text-brand">수강 후기</p>
-        <h2 className="mt-3 max-w-xl font-display text-3xl font-semibold leading-tight text-balance text-ink lg:text-4xl">
-          함께 배운 이들의 이야기
-        </h2>
-        <div className="mt-12 grid gap-5 md:grid-cols-2">
+        <div className="flex flex-col gap-3">
+          <span className="font-mono text-[13px] font-bold tracking-[0.16em] text-brand">
+            REVIEWS
+          </span>
+          <h2 className="max-w-xl text-3xl font-black tracking-tight text-balance text-ink lg:text-4xl">
+            함께 배운 이들의 이야기
+          </h2>
+        </div>
+        <div className="mt-10 grid gap-5 md:grid-cols-2">
           {TESTIMONIALS.map((item) => (
             <div
               key={item.name}
-              className="rounded-2xl bg-paper/60 p-6 ring-1 ring-ink/5 backdrop-blur-xl"
+              className="flex flex-col gap-7 rounded-[18px] border border-border bg-paper p-9"
             >
-              <p className="text-pretty text-base leading-relaxed text-ink/80">{item.quote}</p>
-              <div className="mt-6 flex items-center gap-3">
+              <p className="text-pretty text-xl leading-[1.6] font-semibold tracking-tight text-ink">
+                “{item.quote}”
+              </p>
+              <div className="mt-auto flex items-center gap-3">
                 <Image
                   src={item.avatar}
                   alt={`${item.name} 프로필 사진`}
@@ -43,8 +49,8 @@ export function Testimonials() {
                   className="size-11 rounded-full object-cover ring-1 ring-ink/5"
                 />
                 <div>
-                  <p className="text-sm font-medium text-ink">{item.name}</p>
-                  <p className="text-xs text-ink/50">{item.role}</p>
+                  <p className="text-[15px] font-bold text-ink">{item.name}</p>
+                  <p className="text-sm text-ink/50">{item.role}</p>
                 </div>
               </div>
             </div>

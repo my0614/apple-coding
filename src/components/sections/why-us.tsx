@@ -15,15 +15,17 @@ const REASONS = [
 
 export function WhyUs() {
   return (
-    <section className="bg-cool">
+    <section className="bg-background">
       <div className="mx-auto max-w-6xl px-6 py-20 lg:py-24">
         <div className="grid items-center gap-10 lg:grid-cols-2">
           <div>
-            <p className="text-sm font-medium text-brand">수업 진행과정</p>
-            <h2 className="mt-3 font-display text-3xl font-semibold leading-tight text-balance text-ink lg:text-4xl">
+            <span className="font-mono text-[13px] font-bold tracking-[0.16em] text-brand">
+              수업 진행과정
+            </span>
+            <h2 className="mt-3 text-3xl font-black tracking-tight text-balance text-ink lg:text-4xl">
               교과서처럼 명확하게
             </h2>
-            <p className="mt-4 max-w-[44ch] text-pretty text-base text-ink/65">
+            <p className="mt-4 max-w-[44ch] text-pretty text-[15px] leading-[1.7] text-ink/60">
               복잡함은 배움의 적입니다. 우리는 각 단계를 가장 단순한 문장으로 정리해, 어디서부터
               무엇을 하는지 언제나 보여줍니다.
             </p>
@@ -32,13 +34,13 @@ export function WhyUs() {
             {REASONS.map((reason, index) => (
               <div
                 key={reason.title}
-                className="flex gap-4 rounded-2xl bg-paper/60 p-5 ring-1 ring-ink/5 backdrop-blur-xl"
+                className="flex gap-4 rounded-[18px] border border-border bg-paper p-5"
               >
-                <span className="grid size-10 shrink-0 place-items-center rounded-full bg-brand/10 font-display font-semibold text-brand">
+                <span className="grid size-10 shrink-0 place-items-center rounded-full bg-brand-soft font-bold text-brand">
                   {index + 1}
                 </span>
                 <div>
-                  <h3 className="text-sm font-medium text-ink">{reason.title}</h3>
+                  <h3 className="text-sm font-bold text-ink">{reason.title}</h3>
                   <p className="mt-1 text-sm text-ink/60">{reason.description}</p>
                 </div>
               </div>
