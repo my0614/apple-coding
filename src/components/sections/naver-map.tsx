@@ -17,7 +17,7 @@ export function NaverMap({ title, address, placeUrl }: NaverMapProps) {
       target="_blank"
       rel="noopener noreferrer"
       aria-label={`${title} 위치를 네이버 지도에서 보기`}
-      className="group block overflow-hidden rounded-[18px] bg-paper/10 ring-1 ring-paper/10"
+      className="group block overflow-hidden rounded-[18px] bg-card shadow-sm ring-1 ring-ink/10"
     >
       <div className="relative h-64">
         <Image
@@ -37,7 +37,7 @@ export function NaverMap({ title, address, placeUrl }: NaverMapProps) {
           © OpenStreetMap contributors
         </span>
       </div>
-      <span className="flex items-center justify-center gap-1.5 bg-paper/5 py-3 text-sm font-medium text-paper/80 transition-colors group-hover:bg-paper/10 group-hover:text-paper">
+      <span className="flex items-center justify-center gap-1.5 py-3 text-sm font-semibold text-ink/80 transition-colors group-hover:text-brand">
         네이버 지도에서 보기 ↗
       </span>
     </a>

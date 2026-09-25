@@ -1,5 +1,6 @@
 "use client";
 
+import { CircleCheck, Mail, MapPin, Newspaper, Phone } from "lucide-react";
 import { useState } from "react";
 
 import { COURSE_OPTIONS } from "@/lib/contact";
@@ -7,9 +8,21 @@ import { SITE } from "@/lib/site";
 
 import { NaverMap } from "./naver-map";
 
-const contactLinkClass = "transition-colors hover:text-paper";
 const fieldClass =
-  "w-full rounded-[10px] bg-paper/10 px-4 py-3 text-base text-paper ring-1 sm:text-sm ring-paper/10 outline-none placeholder:text-paper/40 focus:ring-2 focus:ring-brand";
+  "w-full rounded-xl bg-mist px-4 py-3 text-base text-ink ring-1 ring-ink/10 outline-none transition placeholder:text-ink/35 focus:bg-card focus:ring-2 focus:ring-brand sm:text-sm";
+
+const CONTACT_ITEMS = [
+  { label: "위치", value: SITE.address, icon: MapPin },
+  { label: "전화번호", value: SITE.phone, href: `tel:${SITE.phone}`, icon: Phone },
+  { label: "이메일", value: SITE.email, href: `mailto:${SITE.email}`, icon: Mail },
+  {
+    label: "블로그",
+    value: "blog.naver.com/aqi2255 ↗",
+    href: SITE.blogUrl,
+    external: true,
+    icon: Newspaper,
+  },
+];
 
 type Status = "idle" | "sending" | "success";
 
@@ -47,48 +60,42 @@ export function Contact() {
   }
 
   return (
-    <section id="contact" className="relative scroll-mt-16 overflow-hidden bg-ink">
-      <div
-        className="pointer-events-none absolute inset-0"
-        style={{
-          background: "radial-gradient(55% 55% at 80% 0%, rgba(165,11,37,0.5), transparent 60%)",
-        }}
-      />
-      <div className="relative mx-auto grid max-w-6xl gap-12 px-6 py-16 lg:grid-cols-2 lg:py-24">
+    <section id="contact" className="scroll-mt-16 bg-mist">
+      <div className="mx-auto grid max-w-6xl gap-12 px-6 py-16 lg:grid-cols-2 lg:py-24">
         <div>
-          <h2 className="font-display text-3xl font-semibold leading-tight text-balance text-paper lg:text-4xl">
+          <p className="text-sm font-medium text-brand">무료 상담 신청</p>
+          <h2 className="mt-3 font-display text-3xl font-semibold leading-tight text-balance text-ink lg:text-4xl">
             함께 배워볼까요?
           </h2>
-          <p className="mt-4 max-w-[42ch] text-pretty text-base text-paper/65">
+          <p className="mt-4 max-w-[42ch] text-pretty text-base text-ink/65">
             무료 체험 수업을 신청해 주세요. 담당 선생님이 24시간 안에 연락드립니다.
           </p>
-          <dl className="mt-8 grid grid-cols-[auto_1fr] gap-x-6 gap-y-3 text-sm">
-            <dt className="text-paper/45">위치</dt>
-            <dd className="text-paper/75">{SITE.address}</dd>
-            <dt className="text-paper/45">전화번호</dt>
-            <dd className="text-paper/75">
-              <a href={`tel:${SITE.phone}`} className={contactLinkClass}>
-                {SITE.phone}
-              </a>
-            </dd>
-            <dt className="text-paper/45">이메일</dt>
-            <dd className="text-paper/75">
-              <a href={`mailto:${SITE.email}`} className={contactLinkClass}>
-                {SITE.email}
-              </a>
-            </dd>
-            <dt className="text-paper/45">블로그</dt>
-            <dd className="text-paper/75">
-              <a
-                href={SITE.blogUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className={contactLinkClass}
-              >
-                blog.naver.com/aqi2255 ↗
-              </a>
-            </dd>
-          </dl>
+          <ul className="mt-8 space-y-4 text-sm">
+            {CONTACT_ITEMS.map((item) => {
+              const Icon = item.icon;
+              return (
+                <li key={item.label} className="flex items-start gap-3">
+                  <span className="grid size-9 shrink-0 place-items-center rounded-xl bg-card text-brand shadow-sm ring-1 ring-ink/10">
+                    <Icon className="size-4" aria-hidden />
+                  </span>
+                  <div className="pt-0.5">
+                    <p className="text-xs text-ink/45">{item.label}</p>
+                    {item.href ? (
+                      <a
+                        href={item.href}
+                        {...(item.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+                        className="font-semibold text-ink transition-colors hover:text-brand"
+                      >
+                        {item.value}
+                      </a>
+                    ) : (
+                      <p className="font-semibold text-ink">{item.value}</p>
+                    )}
+                  </div>
+                </li>
+              );
+            })}
+          </ul>
           <div className="mt-8">
             <NaverMap
               title="애플코딩학원"
@@ -98,21 +105,26 @@ export function Contact() {
           </div>
         </div>
         {status === "success" ? (
-          <div className="grid place-items-center rounded-[18px] bg-paper/10 p-6 ring-1 ring-paper/10 backdrop-blur-xl">
-            <p className="text-center text-base text-paper">
-              상담 신청이 접수되었습니다.
-              <br />
-              <span className="text-sm text-paper/60">담당 선생님이 24시간 안에 연락드릴게요.</span>
-            </p>
+          <div className="grid place-items-center rounded-3xl bg-card p-8 text-center shadow-lg ring-1 ring-ink/5">
+            <div>
+              <span className="mx-auto grid size-14 place-items-center rounded-full bg-brand-soft text-brand">
+                <CircleCheck className="size-7" aria-hidden />
+              </span>
+              <p className="mt-5 text-xl font-bold text-ink">상담 신청이 접수되었습니다</p>
+              <p className="mt-2 text-sm text-ink/60">담당 선생님이 24시간 안에 연락드릴게요.</p>
+            </div>
           </div>
         ) : (
           <form
-            className="space-y-4 rounded-[18px] bg-paper/10 p-6 ring-1 ring-paper/10 backdrop-blur-xl"
+            className="space-y-5 rounded-3xl bg-card p-6 shadow-lg ring-1 ring-ink/5 sm:p-8"
             onSubmit={handleSubmit}
             noValidate
           >
             <div>
-              <label htmlFor="contact-name" className="mb-1.5 block text-xs text-paper/60">
+              <label
+                htmlFor="contact-name"
+                className="mb-1.5 block text-sm font-semibold text-ink/80"
+              >
                 이름 <span className="text-brand">*</span>
               </label>
               <input
@@ -127,7 +139,10 @@ export function Contact() {
               />
             </div>
             <div>
-              <label htmlFor="contact-phone" className="mb-1.5 block text-xs text-paper/60">
+              <label
+                htmlFor="contact-phone"
+                className="mb-1.5 block text-sm font-semibold text-ink/80"
+              >
                 연락처 <span className="text-brand">*</span>
               </label>
               <input
@@ -142,19 +157,23 @@ export function Contact() {
               />
             </div>
             <div>
-              <label htmlFor="contact-course" className="mb-1.5 block text-xs text-paper/60">
+              <label
+                htmlFor="contact-course"
+                className="mb-1.5 block text-sm font-semibold text-ink/80"
+              >
                 관심 과정
               </label>
               <select id="contact-course" name="course" className={fieldClass}>
                 {COURSE_OPTIONS.map((option) => (
-                  <option key={option} className="text-ink">
-                    {option}
-                  </option>
+                  <option key={option}>{option}</option>
                 ))}
               </select>
             </div>
             <div>
-              <label htmlFor="contact-message" className="mb-1.5 block text-xs text-paper/60">
+              <label
+                htmlFor="contact-message"
+                className="mb-1.5 block text-sm font-semibold text-ink/80"
+              >
                 문의 내용 (선택)
               </label>
               <textarea
@@ -177,8 +196,8 @@ export function Contact() {
                 autoComplete="off"
               />
             </div>
-            <div className="rounded-[10px] bg-paper/5 p-3 text-xs leading-relaxed text-paper/55">
-              <label className="flex cursor-pointer items-start gap-2.5 text-sm text-paper/80">
+            <div className="rounded-xl bg-mist p-4 text-xs leading-relaxed text-ink/55">
+              <label className="flex cursor-pointer items-start gap-2.5 text-sm font-medium text-ink/85">
                 <input
                   name="consent"
                   type="checkbox"
@@ -196,14 +215,17 @@ export function Contact() {
               </ul>
             </div>
             {error && (
-              <p role="alert" className="rounded-[10px] bg-brand/15 px-3 py-2 text-sm text-paper">
+              <p
+                role="alert"
+                className="rounded-xl bg-brand-soft px-4 py-3 text-sm font-medium text-brand"
+              >
                 {error}
               </p>
             )}
             <button
               type="submit"
               disabled={status === "sending"}
-              className="w-full rounded-[10px] bg-brand py-3 text-sm font-medium text-primary-foreground ring-1 ring-brand/30 transition-colors hover:bg-brand/90 disabled:cursor-wait disabled:opacity-70"
+              className="w-full rounded-xl bg-brand py-3.5 text-base font-semibold text-primary-foreground shadow-sm transition-colors hover:bg-brand/90 disabled:cursor-wait disabled:opacity-70"
             >
               {status === "sending" ? "보내는 중…" : "상담 신청하기"}
             </button>
