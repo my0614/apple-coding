@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
-import { Courses } from "@/components/sections/courses";
+import { ClassList } from "@/components/sections/class-list";
+import { FocusAreas } from "@/components/sections/focus-areas";
 import { TrialCta } from "@/components/sections/trial-cta";
 import { Reveal } from "@/components/site/reveal";
 
@@ -12,7 +13,10 @@ export default function CurriculumPage() {
   return (
     <>
       <Reveal>
-        <Courses />
+        <FocusAreas />
+      </Reveal>
+      <Reveal>
+        <ClassList />
       </Reveal>
       <Reveal>
         <TrialCta />

@@ -23,7 +23,7 @@ function Highlight({ text, keyword }: { text: string; keyword: string }) {
   );
 }
 
-// 수업 진행과정 페이지의 과정별 수업 구성. 카드를 누르면 상세 팝업이 열립니다.
+// 커리큘럼 페이지의 과정별 수업 구성. 카드를 누르면 상세 팝업이 열립니다.
 export function ClassList() {
   return (
     <section className="bg-mist">
