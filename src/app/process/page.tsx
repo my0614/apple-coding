@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 
+import { LearningPath } from "@/components/sections/learning-path";
 import { Roadmap } from "@/components/sections/roadmap";
 import { TrialCta } from "@/components/sections/trial-cta";
 import { Reveal } from "@/components/site/reveal";
@@ -13,6 +14,9 @@ export default function ProcessPage() {
     <>
       <Reveal>
         <Roadmap />
+      </Reveal>
+      <Reveal>
+        <LearningPath />
       </Reveal>
       <Reveal>
         <TrialCta />
