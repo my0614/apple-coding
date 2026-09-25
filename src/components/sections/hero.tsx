@@ -76,10 +76,10 @@ export function Hero() {
               커리큘럼 살펴보기
             </Link>
             <Link
-              href="/schedule"
+              href="/#contact"
               className="inline-flex items-center gap-2 rounded-full bg-paper/60 px-5 py-2.5 text-base font-semibold text-ink ring-1 ring-ink/5 backdrop-blur-md"
             >
-              수업 시간표
+              무료 상담 신청
             </Link>
           </div>
         </div>

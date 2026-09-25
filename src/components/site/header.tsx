@@ -12,7 +12,6 @@ import { Logo } from "./logo";
 const NAV_LINKS = [
   { href: "/curriculum", label: "커리큘럼" },
   { href: "/process", label: "수업 진행과정" },
-  { href: "/schedule", label: "타임테이블" },
 ];
 
 export function Header() {

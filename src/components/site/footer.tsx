@@ -7,7 +7,6 @@ import { Logo } from "./logo";
 const FOOTER_LINKS = [
   { href: "/curriculum", label: "커리큘럼" },
   { href: "/process", label: "수업 진행과정" },
-  { href: "/schedule", label: "타임테이블" },
   { href: "/#contact", label: "상담 신청" },
 ];
 
