@@ -1,8 +1,8 @@
 // 학원 기본 정보. 상담 섹션, 푸터, 모바일 전화 버튼에서 함께 사용합니다.
 export const SITE = {
   name: "애플코딩학원",
-  // 사이트 정식 주소 (애플코딩학원.site). 링크 미리보기 이미지 등 절대 주소에 사용합니다.
-  url: "https://xn--o01bm12au5ad7senhjna.site",
+  // 사이트 정식 주소 (www.애플코딩학원.site, Vercel 대표 도메인과 같아야 함). 링크 미리보기 이미지 등 절대 주소에 사용합니다.
+  url: "https://www.xn--o01bm12au5ad7senhjna.site",
   registration: "교육청 등록 제6806호",
   address: "전남광주 광산구 임방울대로 330, 8층 802호",
   phone: "062-961-8866",
