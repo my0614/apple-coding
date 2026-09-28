@@ -6,6 +6,9 @@ import { SITE } from "@/lib/site";
 // 상담 신청을 받아 네이버 SMTP로 학원 메일에 보냅니다.
 // 필요한 환경변수: NAVER_SMTP_USER, NAVER_SMTP_PASS (.env.local / Vercel)
 export const runtime = "nodejs";
+// 네이버 SMTP는 해외 IP 로그인을 차단할 수 있어 서울 리전(icn1)에서만 실행합니다.
+// vercel.json의 "regions": ["icn1"]로 프로젝트 전체도 서울로 고정되어 있습니다.
+export const preferredRegion = "icn1";
 
 function escapeHtml(value: string) {
   return value
