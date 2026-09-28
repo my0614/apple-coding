@@ -2,7 +2,7 @@ import type { CSSProperties } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
-import heroDesk from "@/assets/hero-desk.jpg";
+import heroAcademy from "@/assets/hero-academy.jpg";
 import { cn } from "@/lib/utils";
 
 import { TypingText } from "./typing-text";
@@ -86,12 +86,12 @@ export function Hero() {
         <div className="hero-in lg:col-span-5" style={delay(300)}>
           <div className="rounded-[20px] bg-paper/65 p-3 ring-1 ring-ink/5 backdrop-blur-2xl">
             <Image
-              src={heroDesk}
-              alt="코드가 켜진 노트북이 놓인 깨끗한 학습 책상"
+              src={heroAcademy}
+              alt="애플코딩학원 선생님과 학생들이 홀로그램 코딩 화면을 함께 보는 일러스트"
               priority
               placeholder="blur"
               sizes="(min-width: 1024px) 40vw, 100vw"
-              className="aspect-[4/3] w-full lg:aspect-[4/5] rounded-[14px] object-cover"
+              className="aspect-[4/3] w-full rounded-[14px] object-cover"
             />
           </div>
         </div>

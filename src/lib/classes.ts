@@ -138,8 +138,8 @@ export const CLASS_GROUPS: ClassGroup[] = [
     title: "언어반 (Language)",
     description: "파이썬 · 자바 · 자바스크립트 · C언어를 언어별로 배웁니다.",
     highlight: {
-      text: "언어반 학습으로 정보처리기능사까지 탄탄하게 준비합니다.",
-      keyword: "정보처리기능사",
+      text: "수업별 학습을 통해 자격증 취득까지 체계적으로 준비합니다.",
+      keyword: "자격증 취득",
     },
     items: [
       {
