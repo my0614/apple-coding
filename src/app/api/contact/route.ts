@@ -94,8 +94,24 @@ export async function POST(request: Request) {
       html,
     });
   } catch (error) {
-    console.error("상담 메일 발송 실패", error);
-    return Response.json({ ok: false, error: "메일 발송에 실패했습니다." }, { status: 502 });
+    // 원인 파악용: 오류 코드(EAUTH, ETIMEDOUT 등)와 실행 리전을 남깁니다. 비밀번호는 기록하지 않습니다.
+    const { code, responseCode, command } = error as {
+      code?: string;
+      responseCode?: number;
+      command?: string;
+    };
+    console.error("상담 메일 발송 실패", {
+      region: process.env["VERCEL_REGION"] ?? "local",
+      code,
+      responseCode,
+      command,
+    });
+    console.error(error);
+    const detail = [code, responseCode].filter(Boolean).join(" ");
+    return Response.json(
+      { ok: false, error: `메일 발송에 실패했습니다.${detail ? ` (오류 코드: ${detail})` : ""}` },
+      { status: 502 },
+    );
   }
 
   return Response.json({ ok: true });
