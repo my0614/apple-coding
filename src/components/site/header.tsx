@@ -5,6 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 
+import { SITE } from "@/lib/site";
 import { cn } from "@/lib/utils";
 
 import { Logo } from "./logo";
@@ -39,6 +40,14 @@ export function Header() {
               {link.label}
             </Link>
           ))}
+          <a
+            href={SITE.blogUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="transition-colors hover:text-ink"
+          >
+            공식 블로그
+          </a>
         </nav>
         <div className="flex items-center gap-2">
           <Link
@@ -78,6 +87,17 @@ export function Header() {
                 </Link>
               </li>
             ))}
+            <li>
+              <a
+                href={SITE.blogUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={closeMenu}
+                className="block rounded-lg px-2 py-3.5 text-lg font-semibold text-ink/80 transition-colors hover:bg-ink/5 hover:text-ink"
+              >
+                공식 블로그
+              </a>
+            </li>
           </ul>
         </nav>
       )}
