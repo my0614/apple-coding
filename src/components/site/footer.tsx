@@ -5,8 +5,10 @@ import { SITE } from "@/lib/site";
 import { Logo } from "./logo";
 
 const FOOTER_LINKS = [
+  { href: "/vision", label: "비전" },
   { href: "/curriculum", label: "커리큘럼" },
   { href: "/process", label: "수업 진행과정" },
+  { href: "/admission", label: "입시" },
   { href: "/#contact", label: "상담 신청" },
 ];
 
