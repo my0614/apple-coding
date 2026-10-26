@@ -4,7 +4,7 @@ import { Noto_Sans_KR, Space_Grotesk } from "next/font/google";
 import { CallButton } from "@/components/site/call-button";
 import { Footer } from "@/components/site/footer";
 import { Header } from "@/components/site/header";
-import { SITE } from "@/lib/site";
+import { OPEN_GRAPH, SITE } from "@/lib/site";
 
 import "./globals.css";
 
@@ -33,9 +33,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "애플코딩학원 | 생성형 AI 시대, 미래를 바꾸는 코딩 교육의 기준",
     description: DESCRIPTION,
-    siteName: SITE.name,
-    locale: "ko_KR",
-    type: "website",
+    ...OPEN_GRAPH,
   },
   twitter: {
     card: "summary_large_image",

@@ -3,9 +3,16 @@ import type { Metadata } from "next";
 
 import { TrialCta } from "@/components/sections/trial-cta";
 import { Reveal } from "@/components/site/reveal";
+import { OPEN_GRAPH } from "@/lib/site";
+
+const TITLE = "비전 | 애플코딩학원";
+const DESCRIPTION =
+  "디지털 세상의 설계자, AI와 함께 성장하는 아이들의 꿈을 디자인합니다. 창의적 상상력, 문제 해결력과 자신감, 융합형 리더로의 성장까지 애플코딩학원의 3가지 핵심 약속을 소개합니다.";
 
 export const metadata: Metadata = {
-  title: "비전 | 애플코딩학원",
+  title: TITLE,
+  description: DESCRIPTION,
+  openGraph: { ...OPEN_GRAPH, title: TITLE, description: DESCRIPTION },
 };
 
 // 학원장 비전 문서(애플코딩학원 홈페이지 비전.pdf)의 3가지 핵심 약속.

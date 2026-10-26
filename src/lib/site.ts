@@ -10,3 +10,19 @@ export const SITE = {
   blogUrl: "https://blog.naver.com/aqi2255",
   naverPlaceUrl: "https://map.naver.com/p/entry/place/1541412027",
 } as const;
+
+// 링크 공유 미리보기 공통 값. 페이지에서 openGraph를 지정하면 레이아웃 값을 통째로 덮어쓰므로 함께 펼쳐 씁니다.
+// 이미지도 함께 덮어써져 사라지므로 src/app/opengraph-image.png 를 직접 지정합니다.
+export const OPEN_GRAPH = {
+  siteName: SITE.name,
+  locale: "ko_KR",
+  type: "website",
+  images: [
+    {
+      url: "/opengraph-image.png",
+      width: 1200,
+      height: 630,
+      alt: '애플코딩학원 로고와 "생성형 AI 시대, 미래를 바꾸는 코딩 교육의 기준" 문구',
+    },
+  ],
+};
