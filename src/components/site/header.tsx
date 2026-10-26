@@ -28,7 +28,7 @@ export function Header() {
         <Link href="/" onClick={closeMenu} aria-label="애플코딩학원 홈">
           <Logo />
         </Link>
-        <nav className="hidden items-center gap-8 text-base font-semibold text-ink/75 md:flex">
+        <nav className="hidden items-center gap-8 text-base font-semibold text-ink/75 lg:flex">
           {NAV_LINKS.map((link) => (
             <Link
               key={link.href}
@@ -65,14 +65,14 @@ export function Header() {
             aria-expanded={menuOpen}
             aria-controls="mobile-menu"
             aria-label={menuOpen ? "메뉴 닫기" : "메뉴 열기"}
-            className="grid size-10 place-items-center rounded-full text-ink transition-colors hover:bg-ink/5 md:hidden"
+            className="grid size-10 place-items-center rounded-full text-ink transition-colors hover:bg-ink/5 lg:hidden"
           >
             {menuOpen ? <X className="size-5" /> : <Menu className="size-5" />}
           </button>
         </div>
       </div>
       {menuOpen && (
-        <nav id="mobile-menu" className="border-t border-ink/5 md:hidden">
+        <nav id="mobile-menu" className="border-t border-ink/5 lg:hidden">
           <ul className="mx-auto flex max-w-6xl flex-col px-6 py-2">
             {NAV_LINKS.map((link) => (
               <li key={link.href}>
