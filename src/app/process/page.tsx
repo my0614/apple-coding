@@ -24,10 +24,10 @@ export default function ProcessPage() {
         <Roadmap />
       </Reveal>
       <Reveal>
-        <ClassGallery />
+        <LearningPath />
       </Reveal>
       <Reveal>
-        <LearningPath />
+        <ClassGallery />
       </Reveal>
       <Reveal>
         <TrialCta />

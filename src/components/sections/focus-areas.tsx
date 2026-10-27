@@ -59,8 +59,10 @@ export function FocusAreas() {
                   <Icon className="size-7" aria-hidden />
                 </span>
                 <h3 className="mt-6 text-xl font-bold leading-snug text-ink">{area.title}</h3>
-                <p className="mt-3 text-sm leading-relaxed text-ink/65">{area.description}</p>
-                <p className="mt-auto pt-5 text-xs font-semibold text-ink/50">{area.classes}</p>
+                <p className="mt-3 text-sm leading-relaxed font-bold text-ink/75">
+                  {area.description}
+                </p>
+                <p className="mt-auto pt-5 text-xs font-bold text-ink/65">{area.classes}</p>
               </li>
             );
           })}
