@@ -48,7 +48,7 @@ export default function VisionPage() {
               <h1 className="mt-3 font-display text-3xl font-semibold leading-tight text-balance text-ink lg:text-4xl">
                 디지털 세상의 설계자, AI와 함께 성장하는 아이들의 꿈을 디자인하다
               </h1>
-              <p className="mt-6 text-pretty text-base leading-relaxed text-ink/65">
+              <p className="mt-6 rounded-r-2xl rounded-l-md border border-l-4 border-red-200 border-l-red-600 bg-red-50 px-6 py-5 text-pretty text-base leading-relaxed font-bold text-ink/85">
                 애플코딩학원은 우리 아이들이 미래 디지털 사회의 주인공으로 당당하게 성장할 수 있도록
                 돕는 든든한 디딤돌입니다. 단순히 코딩 기술을 배우는 것을 넘어, AI라는 무한한
                 가능성을 도구 삼아 아이들의 생각에 날개를 달아주고, 스스로 미래를 설계하는 자신감
@@ -77,7 +77,7 @@ export default function VisionPage() {
                     <h3 className="mt-6 text-lg font-bold leading-snug text-balance text-ink">
                       {promise.title}
                     </h3>
-                    <p className="mt-3 text-sm leading-relaxed text-ink/65">
+                    <p className="mt-4 rounded-xl border border-red-300 bg-red-50/70 p-4 text-sm leading-relaxed font-bold text-ink/80">
                       {promise.description}
                     </p>
                   </li>

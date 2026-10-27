@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 
+import { ClassGallery } from "@/components/sections/class-gallery";
 import { LearningPath } from "@/components/sections/learning-path";
 import { Roadmap } from "@/components/sections/roadmap";
 import { TrialCta } from "@/components/sections/trial-cta";
@@ -21,6 +22,9 @@ export default function ProcessPage() {
     <>
       <Reveal>
         <Roadmap />
+      </Reveal>
+      <Reveal>
+        <ClassGallery />
       </Reveal>
       <Reveal>
         <LearningPath />
