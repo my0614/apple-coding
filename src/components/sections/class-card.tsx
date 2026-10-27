@@ -14,7 +14,7 @@ import {
 import type { ClassItem } from "@/lib/classes";
 
 function TimeChips({ times }: { times: string[] }) {
-  return <span className="font-semibold text-ink">{times.join(" · ")}</span>;
+  return <span className="font-bold text-ink">{times.join(" · ")}</span>;
 }
 
 // 수업 카드. 누르면 상세 팝업이 열립니다.
@@ -29,10 +29,10 @@ export function ClassCard({ item, groupTitle }: { item: ClassItem; groupTitle: s
           <h4 className="text-lg font-bold text-ink">{item.name}</h4>
           <p className="mt-1.5 line-clamp-2 text-sm text-ink/60">{item.summary}</p>
           <dl className="mt-4 grid grid-cols-[auto_1fr] items-center gap-x-4 gap-y-2 text-sm">
-            <dt className="text-ink/45">대상</dt>
-            <dd className="font-semibold text-ink">{item.target}</dd>
-            <dt className="text-ink/45">수업</dt>
-            <dd>
+            <dt className="font-semibold text-ink/60">대상</dt>
+            <dd className="text-base font-bold text-ink">{item.target}</dd>
+            <dt className="font-semibold text-ink/60">수업</dt>
+            <dd className="text-base">
               <TimeChips times={item.times} />
             </dd>
           </dl>
@@ -54,10 +54,10 @@ export function ClassCard({ item, groupTitle }: { item: ClassItem; groupTitle: s
             </DialogDescription>
           </DialogHeader>
           <dl className="mt-5 grid grid-cols-[auto_1fr] items-center gap-x-4 gap-y-2 text-sm">
-            <dt className="text-ink/45">대상</dt>
-            <dd className="font-semibold text-ink">{item.target}</dd>
-            <dt className="text-ink/45">수업</dt>
-            <dd>
+            <dt className="font-semibold text-ink/60">대상</dt>
+            <dd className="text-base font-bold text-ink">{item.target}</dd>
+            <dt className="font-semibold text-ink/60">수업</dt>
+            <dd className="text-base">
               <TimeChips times={item.times} />
             </dd>
           </dl>
